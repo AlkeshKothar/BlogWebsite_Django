@@ -1,0 +1,103 @@
+{% extends 'AceInc/base.html' %} {% load static %} 
+
+{% block title %}
+        <title>AceInc View Blog</title>
+    {% endblock title %}
+
+{% block main_block %}
+
+
+
+<div class="container-fluid mt-5" style="padding-left: 10%;">
+    <div class="row">
+        <div class=" categoriesleftside col-8">
+            <h3 class="mb-4"> BLOG : {{ post.title}} </h3>
+            <img src="{{ post.blog_img.url}}" class="rounded " height="400" width="850" alt="...">
+            <p style="font-family:'Times New Roman', Times, serif; font-size: 25px; margin-top: 5%;">{{ post.content}}</p>
+
+
+            <!--checker for comment if or not, showing comment if any-->
+            {% if com%}
+            <h1 class="row mx-3 ">All Comments:</h1>
+            {% else %}
+            <h1 class="row mx-1 ">No Comments yet:</h1>
+            {% endif %} {% for comments in com %}
+            <div class="container-fluid mt-1 ">
+                <div class="d-flex justify-content-center row ">
+                    <div class="col-md-12 ">
+                        <div class="p-3 bg-dark rounded " style="color: white; ">
+                            <div class="review mt-4 ">
+                                <div class="d-flex flex-row comment-user "><img class="rounded " src="{% static 'user.jfif' %} " alt="My image " width="40 ">
+                                    <div class="ml-2 ">
+                                        <div class="d-flex flex-row align-items-center "><span class="name font-weight-bold ">{{ comments.name_data }} </span><span class="dot "></span></div>
+                                        <div class=" " style="margin-right: 55px; ">{{ comments.comment_date}}</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 ">
+                                    <p style="text-align: left; ">{{ comments}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!--checker end for comment if or not, showing comment if any-->
+            <!-- commet form statetd-->
+            <form method="POST">{% csrf_token %}
+        <div class="bg-dark mt-4 ml-3 mr-3 pt-3 text-white">
+            <div class=" col-md-4 text-left">
+                <label class="text-left" for="name">Your name</label>
+                <input type="text" class="form-control" name="name">
+            </div>
+            <div class=" col-md-8 text-left pb-2">
+                <label for="comment">Your Comment</label>
+                <textarea class="form-control padding-bottom-2" name="comment" rows="2"></textarea>
+            </div>
+            <div class="col-md-1 pb-3">
+                <button type="submit" class="btn btn-white ">Post Comment</button>
+            </div>
+        </div>
+    </form>
+            <!-- commet form ended-->
+        </div>
+        <div class=" categoriesrightside col-4 mt-2">
+        <h3> Our Authors.</h3>
+            <!--card for author_detail-->
+            {% for aut in auth  %}
+            <div class="card mt-3" style="width: 22rem;">
+                <img class="card-img-top" src="{{ aut.author_img.url}}" alt="Card image cap" height="300" width="80">
+                <div class="card-body">
+                    <h5 class="card-title">{{ aut.author_name}}</h5>
+                    <p class="card-text">About them : {{aut.about_auth}}.</p>
+                    <label>Email : {{aut.author_email}}</label>
+                </div>
+            </div>
+            
+            {% endfor %}
+            <!--card for author_detail-->
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock main_block %}

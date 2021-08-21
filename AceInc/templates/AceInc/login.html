@@ -1,0 +1,42 @@
+{% extends 'AceInc/base.html' %} {% block main_block %}
+
+
+
+<div class="container " style="margin-top: 8% !important; margin-bottom: 0%;">
+    <div class="row">
+        <div class=" categoriesleftside col-4" style="font-size: 200px;">
+            <i class="fas fa-user-check"></i>
+        </div>
+        <div class=" categoriesrightside col-7">
+            <div>
+                <form id="login-form" class="form" action="" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <h3>Login to get Started</h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username:</label><br>
+                        <input type="text" name="username" id="username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label><br>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <br>
+                        <input type="submit" name="submit" value="submit">
+                    </div>
+
+                    {% if msg %}
+                    <div>
+                        <h3>{{msg}}</h3>
+                    </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main_block %}

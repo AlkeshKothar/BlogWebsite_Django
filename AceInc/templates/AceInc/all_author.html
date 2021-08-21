@@ -1,0 +1,36 @@
+{% extends 'AceInc/base.html' %} {% load static %}
+
+{% block main_block %}
+
+
+
+{% for author in authors %}
+<div class="container  mt-5">
+    <div class="row">
+        <div class=" categoriesleftside col-5">
+            <img src="{{ author.author_img.url}}" class="rounded mx-auto d-block" height="300" width="450" alt="...">
+        </div>
+        <div class=" categoriesrightside col-7">
+            <h1>{{ cat.title}}</h1>
+            <div>
+                <Label> Name: {{author.author_name}} </Label>
+            </div>
+            <div>
+                <Label>About:{{author.about_auth}} </Label>
+            </div>
+            <div>
+                <Label>Contact: {{author.author_email}}</Label>
+            </div>
+        
+        </div>
+    </div>
+</div>
+{% endfor %} 
+
+
+
+
+
+
+
+{% endblock main_block%}

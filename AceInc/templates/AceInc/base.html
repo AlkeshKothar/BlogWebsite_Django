@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href=" {% static 'base.css' %}">
+
+
+
+
+    <script src="https://kit.fontawesome.com/f904cbfe66.js" crossorigin="anonymous"></script>
+    {% block title %}
+        <title>AceInc Blog</title>
+    {% endblock title %}
+    
+</head>
+
+<body>
+
+    <!--Navar start  Navar start Navar start  Navar start  Navar start-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="icondiv">
+            <span style="font-size: 45px; color: white;">
+        <i class="fas fa-fire-alt homeicon"></i>
+      </span>
+        </div>
+        <div class="test">
+            <a class="navbar-brand ml-4" href="{% url 'home' %}">Ace Inc <br> Blog Mazagine</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ml-1 pl-3 cssnavbarul">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'allpost' %}">All Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'author' %}">Authors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'aboutus' %}">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'mail' %}">Mail Us</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search' %}">
+                <input name="q" class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn  my-2 my-sm-0 searchbtn" type="submit">Search</button>
+            </form>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout'%}" class="Loginbtn btn my-2 my-sm-0">Logout</a>
+            {% else %}
+            <a href="{% url 'login'%}" class="Loginbtn btn my-2 my-sm-0">Login</a>
+            {%endif%}
+        </div>
+    </nav>
+    <!--Navar end    Navar end  Navar end  Navar end  Navar end  Navar end-->
+
+    {% block main_block %} 
+    
+    
+    {% endblock main_block %}
+
+    
+
+
+
+
+    <!--FOotoer start-->
+    <footer class="page-footer font-small stylish-color-dark bg-dark text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="footerdiv col-3">
+                    <i class="fab fa-hotjar"></i>
+                </div>
+                <div class="col-9">
+                    <!-- Footer Links -->
+                    <div class="container text-center text-md-left">
+
+                        <!-- Grid row -->
+                        <div class="row">
+                            <div class="col-md-10 mx-auto">
+                                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Blog- Story</h5>
+                                <p>We allow all our creators and visitors to post blog for free of cost.<br> We usally respond soon, in case of delay please reach us out to below handles.<br>Thank you for visiting us.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <ul class="list-unstyled list-inline text-center py-0">
+                        <li class="list-inline-item">
+                            <h5 class="mb-0">Contact Us</h5>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+                        </li>
+                    </ul>
+                    <!-- Call to action -->
+                    <hr>
+                    <!-- Social buttons -->
+                    <ul class="list-unstyled list-inline text-center iconsfooter">
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-fb mx-1">
+                                <i class="fab fa-facebook-f"> </i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-tw mx-1">
+                                <i class="fab fa-instagram"> </i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-gplus mx-1">
+                                <i class="fab fa-google-plus-g"> </i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-li mx-1">
+                                <i class="fab fa-linkedin-in"> </i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Social buttons -->
+                    <!-- Copyright -->
+                    <div class="footer-copyright text-center py-3">© 2021 No-Copyright: Ace-Incoperate
+                    </div>
+                    <!-- Copyright -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--FOotoer END-->
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{% extends 'AceInc/base.html' %} {% load static %} {% block main_block %}
+<style>
+    .a {
+        margin-top: 4%;
+        margin-bottom: 5%;
+        -ms-transform: rotate(-8deg);
+        /* IE 9 */
+        transform: rotate(-8deg);
+        box-shadow: 10px 10px 5px rgb(20, 4, 4)
+    }
+</style>
+
+<h3 class="hometitle"> All Our Categories</h3>
+{% for catagery in categories %}
+<div class="container mt-5" style="height: 25% !important;">
+    <div class="row">
+        <div class="col-6">
+            <img src="{{catagery.category_image.url}}" height="300" width="450" class="a">
+        </div>
+        <div class="col-5">
+            <div>
+                <h2 class="card-title">{{ catagery.category_feild}}</h2>
+                <label class="card-text">{{ catagery.summary_feild}}</label> <br>
+                <button class="btn btn-dark mt-5"><a style="color: white;" href="{% url 'category' catagery.category_feild %}">View Catgeory</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+<hr> {% endfor %} {% endblock main_block %}
