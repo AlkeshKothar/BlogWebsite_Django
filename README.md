@@ -15,15 +15,11 @@ This Project is build using: Django, HTML, CSS and Bootstrap3
 Below are the screenshot for the project
 
 
-![2021-09-04 00_30_23-AceInc Blog](https://user-images.githubusercontent.com/77409891/132055887-55706aaa-5cc9-4fa7-924b-c1bee72ab149.png)
+<img src="readmeimages/home.png" width="80%">
 
-
-![image2](https://user-images.githubusercontent.com/77409891/132056107-ce258f73-3349-4f54-899a-89064dc79b0f.png)
-
-]
-![fonalfooter](https://user-images.githubusercontent.com/77409891/132057464-006edbcb-8552-4b10-ac55-70aa40e33490.png)
-
-![2021-09-04 00_32_55-AceInc View Blog](https://user-images.githubusercontent.com/77409891/132057561-709e886e-1db3-40c2-9fdc-0a885d1ee553.png)
+<img src="readmeimages/page1.png" width="80%">
+<img src="readmeimages/page2.png" width="80%">
+<img src="readmeimages/comment.png" width="80%">
 
 
 
