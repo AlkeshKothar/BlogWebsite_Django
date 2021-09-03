@@ -11,7 +11,7 @@ Blog based comment<br>
 User login<br>
 Blog and Author view<br>
 
-This Project is build using: Django, HTML, CSS and Bootstrap3
+This Project is build using: Django, HTML, CSS and Bootstrap3 <br>
 Below are the screenshot for the project
 
 
