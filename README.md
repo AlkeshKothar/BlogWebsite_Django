@@ -1,4 +1,5 @@
 # Ace-Inc Blogging: A Blogging Project Using DJango
+(Please wait for screenshots to load thank you)
 
 
 A Simple Blogging Website where we can post multiple blogs depending on which category the user wishes to post on.
