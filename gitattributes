@@ -1,2 +1,1 @@
-* linguist-vendored
-*.Django linguist-vendored=false
+*.python linguist-detectable=false
